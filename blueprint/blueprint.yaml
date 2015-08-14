@@ -1,0 +1,20 @@
+
+# DSL version, should appear in the main blueprint.yaml
+# and may appear in other imports. In such case, the versions must match
+tosca_definitions_version: cloudify_dsl_1_0
+
+imports:
+  - http://www.getcloudify.org/spec/cloudify/3.1/types.yaml
+  - https://raw.githubusercontent.com/lj020326/cloudify3-plugin-test/master/plugin.yaml
+
+node_templates:
+  mock:
+    type: lee.Echo
+node_types:
+  lee.Echo:
+    derived_from: cloudify.nodes.Root
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create:
+          implementation: lee.plugin.echo.create
+
