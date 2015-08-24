@@ -3,7 +3,7 @@ __author__ = 'Lee'
 from setuptools import setup
 
 setup(
-    name='python-http-webserver-plugin',
+    name='cloudify3-plugin-create-tutorial',
     version='1.0',
     author='Cloudify',
     packages=['python_webserver'],

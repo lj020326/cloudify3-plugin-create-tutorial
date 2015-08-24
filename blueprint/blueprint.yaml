@@ -7,7 +7,8 @@ imports:
     # to speed things up, it is possible downloading this file,
     # including it in the blueprint directory and importing it
     # instead.
-    - http://www.getcloudify.org/spec/cloudify/3.3m3/types.yaml
+#    - http://www.getcloudify.org/spec/cloudify/3.3m3/types.yaml
+    - cloudify/3.3m3/types.yaml
     # relative import of plugin.yaml that resides in the blueprint directory
     - https://raw.githubusercontent.com/lj020326/cloudify3-plugin-create-tutorial/master/plugin.yaml
 #    - test_plugin.yaml
@@ -28,7 +29,8 @@ node_templates:
                 start:
                     # here we map the single plugin task to the start operation
                     # of the cloudify.interfaces.lifecycle interface
-                    implementation: plugin_name.plugin.tasks.my_task
+#                    implementation: plugin_name.plugin.tasks.my_task
+                    implementation: plugin_name.python_webserver.operations.my_task
                     inputs:
                         # my_task accepts a single property named
                         # some property. Here we inject this property
